@@ -26,6 +26,7 @@
           series:
           [
           <?php
+          //Berikut adalah algoritma untuk menampilkan grafik total penjualan wesel semua kota
             include('config.php');
             $sql = "SELECT kota FROM penjualan";
             $query=mysql_query($sql) or die(mysql_error());
@@ -70,6 +71,7 @@
           series:
           [
           <?php
+          //Berikut adalah algoritma untuk menampilkan grafik total transaksi wesel semua kota
             include('config.php');
             $sql = "SELECT kota FROM transaksi_kota";
             $query=mysql_query($sql) or die(mysql_error());
