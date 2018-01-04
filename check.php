@@ -1,4 +1,5 @@
 <?php
+//fungsi check.php ini adalah untuk mengecek data user yang ada dalam database agar bisa login ke halaman website.
 	session_start();
 	require_once "config.php";
 
