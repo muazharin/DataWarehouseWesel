@@ -97,11 +97,13 @@
       </div>
     </div>
     <br>
+
     <?php 
     if (isset($_POST['tombol'])) {
       $id = $_POST['thu'];
       switch ($id) {
         case '1':
+        //menampilkan data per tahun 2015
           $perintah2 = "SELECT p.kota, SUM(IF(YEAR(p.jualan)=2015, p.jualan, p.jualan)) AS Total_Penjualan, SUM(t.jml_transaksi)AS Total_Transaksi, p.tahun FROM penjualan p, transaksi_kota t WHERE p.tahun=2015 AND p.kota = t.kota GROUP BY p.kota, t.kota";
           $exucute = mysql_query($perintah2);
           echo "
@@ -139,6 +141,7 @@
           # code...
           break;
           case '2':
+          //menampilkan data per tahun 2016
             $perintah2 = "SELECT p.kota, SUM(IF(YEAR(p.jualan)=2016, p.jualan, p.jualan)) AS Total_Penjualan, SUM(t.jml_transaksi)AS Total_Transaksi, p.tahun FROM penjualan p, transaksi_kota t WHERE p.tahun=2016 AND p.kota = t.kota GROUP BY p.kota, t.kota";
             $exucute = mysql_query($perintah2);
             echo "
@@ -176,6 +179,7 @@
           # code...
           break;
           case '3':
+          //menampilkan data per tahun 2017
             $perintah2 = "SELECT p.kota, SUM(IF(YEAR(p.jualan)=2017, p.jualan, p.jualan)) AS Total_Penjualan, SUM(t.jml_transaksi)AS Total_Transaksi, p.tahun FROM penjualan p, transaksi_kota t WHERE p.tahun=2017 AND p.kota = t.kota GROUP BY p.kota, t.kota";
             $exucute = mysql_query($perintah2);
             echo "
@@ -214,6 +218,7 @@
           break;
         
         default:
+        //menampilkan Total Penjualan dan Transaksi Wesel Seluruh Kota
           $sqli=mysql_query("SELECT p.kota, SUM(p.jualan) AS Total_Penjualan, SUM(t.jml_transaksi)AS Total_Transaksi FROM penjualan p, transaksi_kota t WHERE p.kota = t.kota");
           echo "
           <div class='container'>
